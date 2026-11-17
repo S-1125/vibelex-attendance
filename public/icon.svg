@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- 深炭黑账本底板 -->
+  <rect width="512" height="512" rx="112" fill="#141414"/>
+  <!-- 极细内框线 -->
+  <rect x="28" y="28" width="456" height="456" rx="88" stroke="#262626" stroke-width="2"/>
+
+  <!-- 极简四方位刻度 -->
+  <line x1="256" y1="88" x2="256" y2="112" stroke="#525252" stroke-width="8" stroke-linecap="round"/>
+  <line x1="256" y1="400" x2="256" y2="424" stroke="#525252" stroke-width="8" stroke-linecap="round"/>
+  <line x1="88" y1="256" x2="112" y2="256" stroke="#525252" stroke-width="8" stroke-linecap="round"/>
+  <line x1="400" y1="256" x2="424" y2="256" stroke="#525252" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- 账本表盘外圈与进度弧 -->
+  <circle cx="256" cy="256" r="136" stroke="#2a2a2a" stroke-width="10"/>
+  <path d="M256 120 A136 136 0 0 1 392 256" stroke="#1d5fbf" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- 时针与分针（10:10 对称美感） -->
+  <path d="M256 256L194 198" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+  <path d="M256 256L334 176" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- 深海蓝轴心 -->
+  <circle cx="256" cy="256" r="16" fill="#1d5fbf"/>
+  <circle cx="256" cy="256" r="6" fill="#FFFFFF"/>
+</svg>

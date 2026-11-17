@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f2f4f7" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="轻打卡" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>轻打卡 · 个人出勤账本</title>
+    <!-- 内联开屏动画样式，零网络阻塞瞬间渲染 -->
+    <style>
+      #app-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #f2f4f7;
+        transition: opacity 0.24s ease-out, transform 0.24s ease-out;
+      }
+      #app-splash.is-leaving {
+        opacity: 0;
+        transform: scale(1.02);
+        pointer-events: none;
+      }
+      .splash-mark {
+        width: 72px;
+        height: 72px;
+        animation: splashPop 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .splash-arc {
+        stroke-dasharray: 214;
+        stroke-dashoffset: 214;
+        animation: splashArc 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+      }
+      .splash-hand-h {
+        transform-origin: 256px 256px;
+        animation: splashHour 0.48s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+      }
+      .splash-hand-m {
+        transform-origin: 256px 256px;
+        animation: splashMin 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+      }
+      .splash-title {
+        margin-top: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: #0a0a0a;
+        animation: splashText 0.4s ease-out 0.12s both;
+      }
+      .splash-sub {
+        margin-top: 4px;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+        font-size: 12px;
+        color: #6b6b6b;
+        animation: splashText 0.4s ease-out 0.18s both;
+      }
+      @keyframes splashPop {
+        from { opacity: 0; transform: scale(0.86); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes splashArc {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes splashHour {
+        from { transform: rotate(-45deg); }
+        to { transform: rotate(0deg); }
+      }
+      @keyframes splashMin {
+        from { transform: rotate(-110deg); }
+        to { transform: rotate(0deg); }
+      }
+      @keyframes splashText {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body class="bg-[#f2f4f7] text-[#0a0a0a] antialiased selection:bg-[#1d5fbf]/15">
+    <!-- 原生感开屏动画层 -->
+    <div id="app-splash" aria-hidden="true">
+      <svg class="splash-mark" viewBox="0 0 512 512" fill="none">
+        <rect width="512" height="512" rx="112" fill="#141414" />
+        <rect x="28" y="28" width="456" height="456" rx="88" stroke="#262626" stroke-width="2" />
+        <circle cx="256" cy="256" r="136" stroke="#2a2a2a" stroke-width="10" />
+        <path
+          class="splash-arc"
+          d="M256 120 A136 136 0 0 1 392 256"
+          stroke="#1d5fbf"
+          stroke-width="10"
+          stroke-linecap="round"
+        />
+        <path
+          class="splash-hand-h"
+          d="M256 256L194 198"
+          stroke="#FFFFFF"
+          stroke-width="18"
+          stroke-linecap="round"
+        />
+        <path
+          class="splash-hand-m"
+          d="M256 256L334 176"
+          stroke="#FFFFFF"
+          stroke-width="14"
+          stroke-linecap="round"
+        />
+        <circle cx="256" cy="256" r="16" fill="#1d5fbf" />
+        <circle cx="256" cy="256" r="6" fill="#FFFFFF" />
+      </svg>
+      <div class="splash-title">轻打卡</div>
+      <div class="splash-sub">个人出勤账本</div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

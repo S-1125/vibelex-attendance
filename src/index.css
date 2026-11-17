@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Achromatic Ledger（无彩账本风）设计令牌 */
+:root {
+  --ground: #f2f4f7;
+  --surface: #ffffff;
+  --raised: #eeeeee;
+  --border: #e6e6e6;
+  --rule: #f0f0f0;
+  --control: #d4d4d4;
+  --text: #0a0a0a;
+  --muted: #6b6b6b;
+  --accent: #141414;
+  --data-hue: #1d5fbf;
+  --positive: #2e7d32;
+  --negative: #c4242a;
+  --warning: #92400e;
+  --pill-positive-bg: #dcfae5;
+  --pill-positive-ink: #04250e;
+  --pill-negative-bg: #ffedea;
+  --pill-negative-ink: #831c1e;
+  --pill-warning-bg: #fffbeb;
+  --pill-warning-ink: #92400e;
+  --pill-neutral-bg: #eeeeee;
+  --pill-neutral-ink: #3d3d3d;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--ground);
+    color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  }
+}
+
+.font-mono-num {
+  font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.safe-pb {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.safe-pt {
+  padding-top: max(10px, env(safe-area-inset-top));
+}
