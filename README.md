@@ -4,6 +4,12 @@
 
 在线体验：**https://clock.jianfalab.com**
 
+## 界面预览
+
+| 今日打卡（单手操作 & 时间尺） | 月历与统计（工时分布 & 休假判定） | 规则与设置（单双休 & 存档假账本） |
+| :---: | :---: | :---: |
+| <img src="./docs/screenshots/clock.png" width="240" alt="今日打卡界面" /> | <img src="./docs/screenshots/calendar.png" width="240" alt="月历统计界面" /> | <img src="./docs/screenshots/settings.png" width="240" alt="规则设置界面" /> |
+
 ## 核心特性
 
 1. **单手极速打卡**：拇指热区放置「上班 / 下班 / 休息」三个大圆角按钮，点击即记当前时间，支持 5 秒内一键撤销防误触。
